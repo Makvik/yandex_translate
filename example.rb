@@ -1,0 +1,21 @@
+require 'yandex_translate'
+# gem 'yandex_translate'
+
+
+key = ""
+
+yandex = Yandex_Translate::Client.new(key)
+
+
+puts "\nLanguage detection - \"Привет\"\n"
+puts yandex.detect("Привет")
+
+puts "\nLanguage translate - Я перевожу слово - Привет"
+puts yandex.translate("Я перевожу слово - Привет")
+
+puts "\nAll Language"
+yandex.get_langs.each do |langs|
+  puts langs
+end
+
+
