@@ -1,7 +1,6 @@
 require 'yandex_translate'
-# gem 'yandex_translate'
 
-
+# Need Yandex Key
 key = ""
 
 yandex = Yandex_Translate::Client.new(key)
