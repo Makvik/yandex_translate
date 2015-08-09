@@ -1,3 +1,4 @@
+require "yandex_translate/version"
 require "connect"
 
 module Yandex_Translate
