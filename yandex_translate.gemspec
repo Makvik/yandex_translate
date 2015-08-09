@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = YandexTranslate::VERSION
   spec.authors       = ["Makvik"]
   spec.email         = ["storm.gman@mail.ru"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = ""
+  spec.description   = ""
   spec.homepage      = ""
   spec.license       = "MIT"
 
