@@ -3,7 +3,7 @@ require 'yandex_translate'
 # Need Yandex Key
 key = ""
 
-yandex = Yandex_Translate::Client.new(key)
+yandex = YandexTranslate::Client.new(key)
 
 
 puts "\nLanguage detection - \"Привет\"\n"
