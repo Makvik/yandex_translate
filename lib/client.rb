@@ -1,6 +1,6 @@
 require "connect"
 
-module Yandex_Translate
+module YandexTranslate
   class Client
     def initialize(key)
       @connect = Connect.new(key)

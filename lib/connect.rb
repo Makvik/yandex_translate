@@ -1,7 +1,7 @@
 require 'json'
 require 'net/http'
 
-module Yandex_Translate
+module YandexTranslate
   class Connect
     def initialize(key)
       @key = key
