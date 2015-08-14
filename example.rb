@@ -13,6 +13,3 @@ puts yandex.translate("Я перевожу слово - Привет")
 
 puts "\nAll Language"
 puts yandex.get_langs
-
-
-
