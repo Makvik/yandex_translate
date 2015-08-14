@@ -1,9 +1,7 @@
 language: ruby
 rvm:
- - "2.2.0"
+ - "2.2.2"
  - rbx
 # uncomment this line if your project needs to run something other than `rake`:
-source :rubygems
- gem "bundler",
- gem "rspec"
+install: gem install rspec
 script: rspec spec
