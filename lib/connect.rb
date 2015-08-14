@@ -12,7 +12,7 @@ module YandexTranslate
       rescue
         raise Error.new response
       end
-      if response['code']
+      if response.kind_of?(Hash) && response['code']
         code = response['code'].to_i
         if  ERROR_CODES.key?(code)
           raise Error.new(ERROR_CODES[code])
