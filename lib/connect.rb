@@ -1,18 +1,24 @@
-require 'json'
-require 'net/http'
-
 module YandexTranslate
   class Connect
     def initialize(key)
       @key = key
     end
 
-    def get(type, data)
-      postfix = URI.encode_www_form(data)
-      return JSON.parse(Net::HTTP.get(URI("#{BASE_URI}#{type}?key=#{@key}&#{postfix}")))
+    def request(method, args = {})
+      url = URI.parse("#{BASE_URI}#{method}?key=#{@key}")
+      response = Net::HTTP.post_form(url, args).body
+      begin
+        response = JSON(response)
+      rescue
+        raise Error.new response
+      end
+      if response['code']
+        code = response['code'].to_i
+        if  ERROR_CODES.key?(code)
+          raise Error.new(ERROR_CODES[code])
+        end
+      end
+      return response
     end
-
-    private
-      BASE_URI = 'https://translate.yandex.net/api/v1.5/tr.json/'.freeze
   end
 end

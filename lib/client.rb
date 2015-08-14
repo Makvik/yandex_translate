@@ -1,5 +1,3 @@
-require "connect"
-
 module YandexTranslate
   class Client
     def initialize(key)
@@ -13,17 +11,17 @@ module YandexTranslate
 
     def get_langs_update(lang = 'en')
       data = {"ui" => lang}
-      @langs = @connect.get('getLangs', data)
+      @langs = @connect.request('getLangs')
     end
 
     def detect(text)
       data = {"text" => text}
-      return @connect.get('detect', data)
+      return @connect.request('detect', data)
     end
 
     def translate(text, lang = 'ru', format = 'plain')
       data = {"text" => text, "lang" => lang, "format" => format}
-      return @connect.get('translate', data)
+      return @connect.request('translate', data)
     end
   end
 end
