@@ -1,4 +1,4 @@
-# require "yandex_translate/version"
+require_relative "yandex_translate/version"
 require 'json'
 require 'net/http'
 require 'uri'

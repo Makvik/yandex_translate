@@ -11,7 +11,7 @@ module YandexTranslate
 
     def get_langs_update(lang = 'en')
       data = {"ui" => lang}
-      @langs = @connect.request('getLangs')
+      @langs = @connect.request('getLangs', data)
     end
 
     def detect(text)
