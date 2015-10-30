@@ -1,7 +1,7 @@
 require_relative 'lib/yandex_translate.rb'
 
 # Need Yandex Key
-key = ""
+key = "trnsl.1.1.20150807T193721Z.a28754c35f356a3c.9887c0360b34c7c397a5f114144c28840912b234"
 
 yandex = YandexTranslate::Client.new(key)
 
