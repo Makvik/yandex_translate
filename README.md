@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 Api Key see on https://tech.yandex.com/translate/
-
+```
 yandex = YandexTranslate::Client.new(Api_Key)
 
 Language detection
@@ -37,6 +37,7 @@ puts yandex.last_translate
 list of translation directions
 yandex.get_langs_update("en")
 puts yandex.get_langs
+```
 
 ## Contributing
 
