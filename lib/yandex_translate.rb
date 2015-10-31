@@ -6,8 +6,7 @@ require 'uri'
 [ "client",
   "error",
   "url",
-  "connect",
-  "detect"
+  "connect"
 ].each do |file|
   require_relative file
 end

@@ -19,13 +19,25 @@ Or install it yourself as:
     $ gem install yandex_translate
 
 ## Usage
+Api Key see on https://tech.yandex.com/translate/
 
-See example.rb
+yandex = YandexTranslate::Client.new(Api_Key)
+
+Language detection
+# Only translate
+puts yandex.detect("Привет")
+# Hash
+puts yandex.last_detect
+
+Language translate
+# Only discovered language
+puts yandex.translate("Привет")
+puts yandex.last_translate
+
+list of translation directions
+yandex.get_langs_update("en")
+puts yandex.get_langs
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/yandex_translate/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+https://github.com/Makvik/yandex_translate

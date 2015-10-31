@@ -1,15 +1,21 @@
 require_relative 'lib/yandex_translate.rb'
 
 # Need Yandex Key
-key = "trnsl.1.1.20150807T193721Z.a28754c35f356a3c.9887c0360b34c7c397a5f114144c28840912b234"
+key = ""
 
 yandex = YandexTranslate::Client.new(key)
 
 puts "\nLanguage detection - \"Привет\"\n"
+# Only translate
 puts yandex.detect("Привет")
+# Hash
+puts yandex.last_detect
 
 puts "\nLanguage translate - Я перевожу слово - Привет"
+# Only discovered language
 puts yandex.translate("Привет")
+puts yandex.last_translate
 
 puts "\nAll Language"
+yandex.get_langs_update("en")
 puts yandex.get_langs

@@ -1,15 +1,22 @@
 module YandexTranslate
   class Client
-
     def initialize(key)
       @connect = Connect.new(key)
       @langs = get_langs_update
+      @last_detect
+      @last_translate
     end
 
-    @last_detect = ClassDetect.new
+    def last_detect
+      @last_detect
+    end
+
+    def last_translate
+      @last_transtale
+    end
 
     def get_langs
-      return @langs
+      @langs
     end
 
     def get_langs_update(lang = 'en')
@@ -20,16 +27,13 @@ module YandexTranslate
     def detect(text)
       data = {"text" => text}
       @last_detect = @connect.request('detect', data)
-      return detect.code
+      return @langs["langs"][@last_detect["lang"]]
     end
 
-    def translate(text, lang = 'ru', format = 'plain')
+    def translate(text, lang = 'en', format = 'plain')
       data = {"text" => text, "lang" => lang, "format" => format}
-      return @connect.request('translate', data)
+      @last_transtale = @connect.request('translate', data)
+      return @last_transtale["text"]
     end
-
-
-
-
   end
 end
