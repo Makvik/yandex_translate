@@ -1,14 +1,14 @@
 # YandexTranslate
 
-TODO: Write a gem description
+Library for Yandex Translate API | Библиотека для API Яндекс.Переводчика
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-```ruby
+
 gem 'yandex_translate'
-```
+
 
 And then execute:
 
@@ -19,24 +19,39 @@ Or install it yourself as:
     $ gem install yandex_translate
 
 ## Usage
+
 Api Key see on https://tech.yandex.com/translate/
+
+```ruby
+  yandex = YandexTranslate::Client.new(Api_Key)
 ```
-yandex = YandexTranslate::Client.new(Api_Key)
+
+
+list of translation directions (English default)
+
+```ruby
+  yandex.get_langs
+  or
+  yandex.get_langs("en")
+```
+
 
 Language detection
-# Only translate
-puts yandex.detect("Привет")
-# Hash
-puts yandex.last_detect
+
+```ruby
+yandex.detect 'fr'
+```
 
 Language translate
-# Only discovered language
-puts yandex.translate("Привет")
-puts yandex.last_translate
 
-list of translation directions
-yandex.get_langs_update("en")
-puts yandex.get_langs
+```ruby
+  yandex.translate 'Car', 'fr'
+  yandex.translate 'Car', 'en-fr'
+  yandex.translate 'Car', 'fr', 'plain'
+
+  yandex.translate_from_hash 'Car', to: 'fr'
+  yandex.translate_from_hash 'Car', from: 'en', to: 'fr'
+  yandex.translate_from_hash 'Car', from: 'en', to: 'fr', format: 'plain'
 ```
 
 ## Contributing
