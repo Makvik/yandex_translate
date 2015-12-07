@@ -10,6 +10,9 @@ describe 'YandexTranslate' do
     YandexTranslate::Client.new(key).get_langs.values_at("dirs").should_not include(nil)
   end
   it 'translate' do
-    YandexTranslate::Client.new(key).translate("Привет").should_not include(nil)
+    YandexTranslate::Client.new(key).translate("Привет", 'en').should_not include(nil)
+  end
+  it 'translate' do
+    YandexTranslate::Client.new(key).translate_from_hash('Car', to: 'fr').should_not include(nil)
   end
 end
