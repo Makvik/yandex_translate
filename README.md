@@ -39,19 +39,25 @@ list of translation directions (English default)
 Language detection
 
 ```ruby
-yandex.detect 'fr'
+yandex.detect 'Hello'
 ```
 
 Language translate
 
 ```ruby
-  yandex.translate 'Car', 'fr'
-  yandex.translate 'Car', 'en-fr'
-  yandex.translate 'Car', 'fr', 'plain'
-
-  yandex.translate_from_hash 'Car', to: 'fr'
-  yandex.translate_from_hash 'Car', from: 'en', to: 'fr'
-  yandex.translate_from_hash 'Car', from: 'en', to: 'fr', format: 'plain'
+  # auto detect language
+  yandex.translate 'Hello', 'fr'
+  # with the direction of translation
+  yandex.translate 'Hello', 'en-fr'
+  # with the direction of translation and text format
+  yandex.translate 'Hello', 'en-fr', 'plain'
+  
+  # auto detect language
+  yandex.translate_from_hash 'Hello', to: 'fr'
+  # with the direction of translation
+  yandex.translate_from_hash 'Hello', from: 'en', to: 'fr'
+  # with the direction of translation and text format
+  yandex.translate_from_hash 'Hello', from: 'en', to: 'fr', format: 'plain'
 ```
 
 ## Contributing
