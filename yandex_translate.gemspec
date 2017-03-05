@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = YandexTranslate::VERSION
   spec.authors       = ["Makvik"]
   spec.email         = ["storm.gman@mail.ru"]
-  spec.summary       = ""
-  spec.description   = ""
-  spec.homepage      = ""
+  spec.summary       = "Library for Yandex Translate API | Библиотека для API Яндекс.Переводчика"
+  spec.description   = "Library for Yandex Translate API | Библиотека для API Яндекс.Переводчика"
+  spec.homepage      = "https://github.com/Makvik/yandex_translate"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
